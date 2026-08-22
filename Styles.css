@@ -1,0 +1,599 @@
+/* ==========================================================================
+   1. VARIABLES & SETUP GENERAL
+   ========================================================================== */
+:root {
+    --primary-color: #0d1b2a;     /* Azul Marino Profundo */
+    --secondary-color: #c59b27;   /* Dorado / Bronce Elegante */
+    --accent-color: #25d366;      /* Verde WhatsApp */
+    --text-color: #2b2d42;        /* Gris Oscuro para Texto Principal */
+    --text-muted: #6c757d;        /* Gris Secundario */
+    --bg-light: #f8f9fa;          /* Fondo Claro / Secciones Alternas */
+    --bg-white: #ffffff;
+    --border-color: #e9ecef;
+    --error-color: #e63946;
+    
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Open Sans', sans-serif;
+    
+    --transition: all 0.3s ease;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-md: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-white);
+    
+    /* Configuración Flexbox vertical para anclar el footer */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    
+    /* Scroll vertical activo y sin desbordamiento horizontal */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ========================================================================== */
+.header {
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-box {
+    background-color: var(--secondary-color);
+    color: var(--bg-white);
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    color: var(--bg-white);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.brand-sub {
+    color: var(--secondary-color);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--secondary-color);
+}
+
+.btn-cta-nav {
+    border: 1px solid var(--secondary-color);
+    padding: 8px 18px;
+    border-radius: 4px;
+    color: var(--secondary-color);
+}
+
+.btn-cta-nav:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--bg-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   3. SECCIÓN HERO
+   ========================================================================== */
+.hero {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--bg-white);
+    padding: 60px 20px;
+    width: 100%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(13, 27, 42, 0.82);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    color: #e0e0e0;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Botones Base */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #b08a20;
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1eb956;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. SECCIONES GENERALES & PRUEBA SOCIAL
+   ========================================================================== */
+.section {
+    padding: 80px 0;
+    width: 100%;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto 50px auto;
+}
+
+/* Estadísticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-card {
+    background: var(--bg-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   ESTILOS PARA LA SECCIÓN NUESTRO EQUIPO
+   ========================================================================== */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.team-card {
+    background: var(--bg-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.team-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.team-info {
+    padding: 20px 15px;
+}
+
+.team-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.team-role {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   5. TARJETAS DE SERVICIOS
+   ========================================================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: var(--bg-white);
+    padding: 40px 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--secondary-color);
+}
+
+.icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(197, 155, 39, 0.1);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    flex-shrink: 0;
+}
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: center;
+    margin: 0;
+}
+
+/* ==========================================================================
+   6. SECCIÓN DE CONTACTO (2 COLUMNAS)
+   ========================================================================== */
+#contacto {
+    flex: 1; /* Absorbe el espacio libre para asegurar que el footer quede abajo */
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Tarjeta Info Directa */
+.contact-info-card {
+    background: var(--primary-color);
+    color: var(--bg-white);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.contact-info-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.contact-desc {
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-icon {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.info-text strong {
+    display: block;
+    font-size: 0.95rem;
+}
+
+.info-text p, .info-text a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.info-text a:hover {
+    color: var(--secondary-color);
+}
+
+/* Formulario */
+.contact-form {
+    background: var(--bg-white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-form h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(197, 155, 39, 0.2);
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Estado del Formulario y Errores */
+.error-msg {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.form-status {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+    display: none;
+}
+
+/* ==========================================================================
+   7. FOOTER & ADAPTABILIDAD RESPONSIVE
+   ========================================================================== */
+.footer {
+    background-color: #08101a;
+    color: #9ca3af;
+    padding: 30px 0;
+    font-size: 0.9rem;
+    margin-top: auto; /* Ancla el footer abajo de forma fluida */
+    margin-bottom: 0 !important;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #9ca3af;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
