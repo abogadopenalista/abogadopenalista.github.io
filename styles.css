@@ -530,7 +530,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.65);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -539,31 +539,28 @@ body {
   
   .modal-content {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 30px 25px;
     border-radius: 8px;
     text-align: center;
-    max-width: 450px;
+    max-width: 460px;
     width: 90%;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   }
   
   .modal-logo {
-    max-width: 120px;
-    height: auto;
-    margin-bottom: 15px;
-  }
-  
-  .modal-content h2 {
-    margin-bottom: 10px;
-    color: #1a2530;
-    font-size: 1.4rem;
+    max-width: 280px; /* Tamaño significativamente mayor */
+  width: 100%;
+  height: auto;
+  margin: 0 auto 20px auto;
+  display: block;
+  object-fit: contain;
   }
   
   .modal-content p {
-    color: #555555;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    color: #444444;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
   }
 
 /* ==========================================================================
