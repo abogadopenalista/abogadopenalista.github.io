@@ -521,7 +521,53 @@ body {
 }
 
 /* ==========================================================================
-   7. FOOTER & ADAPTABILIDAD RESPONSIVE
+   7. MODAL CSS CON JS ADAPTADO EN EL INDEX
+   ========================================================================== */
+
+   .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  
+  .modal-logo {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 10px;
+    color: #1a2530;
+    font-size: 1.4rem;
+  }
+  
+  .modal-content p {
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+/* ==========================================================================
+   8. FOOTER & ADAPTABILIDAD RESPONSIVE
    ========================================================================== */
 .footer {
     background-color: #08101a;

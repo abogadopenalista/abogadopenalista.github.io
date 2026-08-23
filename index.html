@@ -49,7 +49,7 @@
             <p>Defendemos sus intereses con la firmeza, ética y dedicación jurídica que su caso amerita.</p>
             <div class="hero-buttons">
                 <a href="#contacto" class="btn btn-primary">Solicitar Consulta</a>
-                <a href="https://wa.me/584120000000" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                <a href="https://wa.me/584265196621" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo
                 </a>
             </div>
@@ -203,7 +203,8 @@
                     </div>
                     <div class="info-text">
                         <strong>Dirección:</strong>
-                        <p>Urbanización Manuel Gonzalez Carvajal, Parroquia Caucaguita, Sector Los Bloques Grandes, Edif. 5 Piso 9 Apto. 904, Caracas, Venezuela.</p>
+                        <p>Urbanización Manuel Gonzalez Carvajal, Parroquia Caucaguita, Sector Los Bloques Grandes, Edif. 5 Piso 9 Apto. 904,
+                            Caracas, Venezuela.</p>
                     </div>
                 </div>
 
@@ -213,8 +214,8 @@
                     </div>
                     <div class="info-text">
                         <strong>Teléfonos:</strong>
-                        <p><a href="tel:+582125550199">+58 (412) 321-6129</a> (Llamadas)</p>
-                        <p><a href="tel:+584120000000">+58 (426) 519-6621</a> (Guardia Legal / WhatsApp)</p>
+                        <p><a href="tel:+584123216129">+58 (412) 321-6129</a> (Llamadas)</p>
+                        <p><a href="tel:+584265196621">+58 (426) 519-6621</a> (Guardia Legal / WhatsApp)</p>
                     </div>
                 </div>
 
@@ -224,8 +225,8 @@
                     </div>
                     <div class="info-text">
                         <strong>Correos Electrónicos:</strong>
-                        <p><a href="mailto:contacto@garciayasociados.com">ramsesjgv@gmail.com</a></p>
-                        <p><a href="mailto:consultas@garciayasociados.com">garcia182@hotmail.com</a></p>
+                        <p><a href="mailto:ramsesjgv@gmail.com">ramsesjgv@gmail.com</a></p>
+                        <p><a href="mailto:garcia182@hotmail.com">garcia182@hotmail.com</a></p>
                     </div>
                 </div>
 
@@ -241,7 +242,7 @@
             </div>
 
             <!-- Formulario de Mensajes -->
-            <form id="contact-form" class="contact-form" novalidate>
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/xdenjral" method="POST" novalidate>
                 <h3>Envíenos un mensaje</h3>
                 <div class="form-group">
                     <label for="fullName">Nombre Completo *</label>
@@ -285,7 +286,18 @@
         </div>
     </footer>
 
+<!-- Modal de Confirmación -->
+<div id="custom-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <img src="images/logo-modal.jpg" alt="GARCÍA Y ASOCIADOS" class="modal-logo">
+      <h2>GARCÍA Y ASOCIADOS</h2>
+      <p>Su mensaje ha sido enviado. En la mayor brevedad posible será atendido por uno de nuestros consultores.</p>
+      <button id="modal-close-btn" class="btn btn-primary">Aceptar</button>
+    </div>
+  </div>
+
     <!-- Script JS -->
     <script src="script.js"></script>
+    <script src="contacto.js"></script>
 </body>
 </html>
